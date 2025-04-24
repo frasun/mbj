@@ -1,0 +1,52 @@
+---
+interface Props {
+	siteName: string;
+	seeAlso: {
+		title: string;
+		logo: string;
+		link: string;
+	};
+}
+
+const { siteName, seeAlso }: Props = Astro.props;
+const FOOTER = {
+	title: "",
+	phone: "+48 502 123 123",
+	email: "aaa@aaa.pl",
+	address: "ul. Stefana Jaracza 2, 91-123 Łódź",
+	socialMedia: [
+		{
+			title: "fb",
+			link: "",
+		},
+		{
+			title: "ig",
+			link: "",
+		},
+	],
+	copyText: "Wszelkie prwa zastrzeżone",
+};
+---
+
+<footer>
+	<h4>{FOOTER.title}</h4>
+	<a href={`tel:${FOOTER.phone.replaceAll(" ", "")}`}>{FOOTER.phone}</a>
+	<a href={`mailto:${FOOTER.email}`}>{FOOTER.email}</a>
+	<address>{FOOTER.address}</address>
+	<aside>
+		<h5>Zobacz również</h5>
+		<strong>{seeAlso.title}</strong>
+	</aside>
+	<ul>
+		{
+			FOOTER.socialMedia.map(({ title, link }) => (
+				<li>
+					<a href={link} aria-label={title}>
+						{title}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+	<p>&copy; {siteName} {new Date().getFullYear()} {FOOTER.copyText}</p>
+</footer>

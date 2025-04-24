@@ -1,0 +1,29 @@
+---
+const MENU = [
+	{
+		label: "Oferta",
+		link: "#oferta",
+	},
+	{
+		label: "Dlaczego my?",
+		link: "#dlaczego-my",
+	},
+	{
+		label: "Kontakt",
+		link: "#kontakt",
+	},
+];
+---
+
+<nav>
+	<div>logo</div>
+	<ul>
+		{
+			MENU.map(({ label, link }) => (
+				<li>
+					<a href={link}>{label}</a>
+				</li>
+			))
+		}
+	</ul>
+</nav>

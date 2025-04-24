@@ -1,0 +1,42 @@
+---
+interface Props {
+	heading: string;
+	services: {
+		title: string;
+		icon: string;
+		bullets: {
+			title: string;
+			content?: string;
+		}[];
+	}[];
+	info?: string;
+}
+
+const { services, heading, info }: Props = Astro.props;
+---
+
+<section>
+	<h2>{heading}</h2>
+	{
+		services.map(({ title, bullets }) => (
+			<div>
+				<h3>{title}</h3>
+				<ul>
+					{bullets.map(({ title, content }) => (
+						<li>
+							<h5>{title}</h5>
+							{content && <p>{content}</p>}
+						</li>
+					))}
+				</ul>
+			</div>
+		))
+	}
+	{info && <p>{info}</p>}
+</section>
+
+<style>
+	h3 {
+		color: var(--services-color, yellow);
+	}
+</style>

@@ -1,0 +1,15 @@
+---
+interface Props {
+	title: string;
+	text: string[];
+}
+
+const { title, text }: Props = Astro.props;
+const SPLASH_CTA = "Sprawdź naszą ofertę";
+---
+
+<section>
+	<h1>{title}</h1>
+	{text.map((text) => <p>{text}</p>)}
+	<a href="#">{SPLASH_CTA}</a>
+</section>

@@ -1,0 +1,34 @@
+---
+interface Props {
+	advantages: {
+		title: string;
+		subtitle: string;
+	}[];
+	pricing: {
+		title: string;
+		content: string;
+	};
+}
+
+const { advantages, pricing }: Props = Astro.props;
+
+const ADVANTAGES_HEADING = "Dlaczego my?";
+---
+
+<section>
+	<h3>{ADVANTAGES_HEADING}</h3>
+	<ul>
+		{
+			advantages.map(({ title, subtitle }) => (
+				<li>
+					<h6>{title}</h6>
+					<p>{subtitle}</p>
+				</li>
+			))
+		}
+	</ul>
+	<div>
+		<h6>{pricing.title}</h6>
+		<p>{pricing.content}</p>
+	</div>
+</section>
