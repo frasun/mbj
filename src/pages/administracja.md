@@ -1,5 +1,6 @@
 ---
-layout: ../layouts/Theme1.astro
+layout: ../layouts/index.astro
+theme: administracja
 splashTitle: 'Jesteśmy profesjonalną firmą specjalizującą się w kompleksowym zarządzaniu wspólnotami mieszkaniowymi na terenie Łodzi'
 splashText: [
   'Naszym celem jest zapewnienie mieszkańcom komfortu, bezpieczeństwa oraz optymalnego funkcjonowania nieruchomości, przy jednoczesnym dbaniu o interesy właścicieli i racjonalne gospodarowanie budżetem wspólnoty.',

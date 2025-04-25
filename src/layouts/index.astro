@@ -10,6 +10,7 @@ const SITE_NAME = "MBJ";
 
 const {
 	frontmatter: {
+		theme,
 		splashTitle,
 		splashText,
 		services,
@@ -22,7 +23,7 @@ const {
 } = Astro.props;
 ---
 
-<Layout>
+<Layout theme={theme}>
 	<Menu />
 	<Splash title={splashTitle} text={splashText} />
 	<Services heading={servicesHeading} services={services} info={servicesInfo} />

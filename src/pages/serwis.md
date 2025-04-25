@@ -1,5 +1,6 @@
 ---
-layout: ../layouts/Theme2.astro
+layout: ../layouts/index.astro
+theme: serwis
 splashTitle: 'Profesjonalne usługi utrzymania w czystości powierzchni wszelkich nieruchomości'
 splashText: [
   'Dbamy o właściwy stan sanitarno-porządkowy i estetykę powierzchni wewnętrznych, zewnętrznych i terenów zielonych.',
