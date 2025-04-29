@@ -1,8 +1,10 @@
 :root {
-	--color--base: #fffb00;
-	--color--accent: #91a6ab;
-	--color--accent-2: #e8edee;
-	--color--text: #2b2d2f;
-	--color--text-2: rgba(43, 45, 47, 0.7);
-	--color--border: rgba(43, 45, 47, 0.3);
+	--color--1: #fffb00;
+	--color--2: #91a6ab;
+	--color--3: #e8edee;
+	--color--4: #2b2d2f;
+	--color--5: rgba(43, 45, 47, 0.7);
+	--color--6: rgba(43, 45, 47, 0.3);
+
+	--color--text: var(--color--4);
 }

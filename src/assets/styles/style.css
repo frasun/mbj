@@ -1,16 +1,32 @@
 @import "reset.css";
 
 :root {
-	--spacing-1: 10px;
-	--spacing-2: 20px;
-	--spacing-3: 40px;
-	--spacing-4: 80px;
-	--font-size-1: 32px;
-	--font-size-2: 30px;
-	--font-size-3: 28px;
-	--font-size-4: 20px;
-	--font-size-5: 19px;
-	--font-size-6: 17px;
-	--font-size-7: 15px;
-	--font-size-8: 13px;
+	--spacing--1: 10px;
+	--spacing--2: 20px;
+	--spacing--3: 40px;
+	--spacing--4: 80px;
+	--font-size--1: 32px;
+	--font-size--2: 30px;
+	--font-size--3: 28px;
+	--font-size--4: 20px;
+	--font-size--5: 19px;
+	--font-size--6: 17px;
+	--font-size--7: 15px;
+	--font-size--8: 13px;
+	--line-height--1: 1.4;
+	--line-height--2: 1.15;
+}
+
+body {
+	color: var(--color--text);
+	line-height: var(--line-height--1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: var(--line-height--2);
 }
