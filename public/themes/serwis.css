@@ -1,3 +1,8 @@
 :root {
-	--text-color: olive;
+	--color--base: #342b2d;
+	--color--accent: #bab8b1;
+	--color--accent-2: #fdfcf2;
+	--color--text: #35332c;
+	--color--text-2: rgba(53, 51, 44, 0.6);
+	--color--border: rgba(186, 184, 177, 0.3);
 }
