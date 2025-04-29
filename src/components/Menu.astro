@@ -1,4 +1,6 @@
 ---
+import Logo from "./Logo.astro";
+
 const MENU = [
 	{
 		label: "Oferta",
@@ -13,10 +15,12 @@ const MENU = [
 		link: "#kontakt",
 	},
 ];
+
+const { theme } = Astro.props;
 ---
 
 <nav>
-	<div>logo</div>
+	<Logo type={theme} />
 	<ul>
 		{
 			MENU.map(({ label, link }) => (

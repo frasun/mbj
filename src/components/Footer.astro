@@ -1,4 +1,6 @@
 ---
+import Logo from "./Logo.astro";
+
 interface Props {
 	siteName: string;
 	seeAlso: {
@@ -35,6 +37,7 @@ const FOOTER = {
 	<address>{FOOTER.address}</address>
 	<aside>
 		<h5>Zobacz również</h5>
+		<Logo type={seeAlso.logo} />
 		<strong>{seeAlso.title}</strong>
 	</aside>
 	<ul>

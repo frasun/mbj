@@ -1,0 +1,8 @@
+---
+import MBJLogo from "../assets/images/logo-mbj.svg";
+import MBJSerwisLogo from "../assets/images/logo-mbj-serwis.svg";
+
+const { type } = Astro.props;
+---
+
+{"administracja" === type ? <MBJLogo /> : <MBJSerwisLogo />}
