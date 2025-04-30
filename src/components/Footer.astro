@@ -1,19 +1,21 @@
 ---
 import Logo from "./Logo.astro";
 import Icon, { IconName as Icons } from "./Icon.astro";
+import type { Theme } from "../layouts/index.astro";
 
 interface Props {
 	siteName: string;
 	seeAlso: {
 		title: string;
-		logo: string;
+		logo: Theme;
 		link: string;
 	};
 }
 
 const { siteName, seeAlso }: Props = Astro.props;
 const FOOTER = {
-	title: "",
+	title:
+		"Zapraszamy do kontaktu w celu omówienia szczegółów i dostosowania oferty do Twoich potrzeb",
 	phone: "+48 502 123 123",
 	email: "aaa@aaa.pl",
 	address: "ul. Stefana Jaracza 2, 91-123 Łódź",
@@ -33,32 +35,98 @@ const FOOTER = {
 };
 ---
 
-<footer>
-	<h4>{FOOTER.title}</h4>
-	<a href={`tel:${FOOTER.phone.replaceAll(" ", "")}`}>
-		<Icon icon={Icons.Phone} />
-		{FOOTER.phone}
-	</a>
-	<a href={`mailto:${FOOTER.email}`}>
-		<Icon icon={Icons.Mention} />
-		{FOOTER.email}
-	</a>
-	<address>{FOOTER.address}</address>
-	<aside>
-		<h5>Zobacz również</h5>
-		<Logo type={seeAlso.logo} />
-		<strong>{seeAlso.title}</strong>
-	</aside>
-	<ul>
-		{
-			FOOTER.socialMedia.map(({ title, link, icon }) => (
-				<li>
-					<a href={link} aria-label={title}>
-						<Icon icon={icon} />
-					</a>
-				</li>
-			))
-		}
-	</ul>
+<footer id="kontakt">
+	<div>
+		<div>
+			<h4>{FOOTER.title}</h4>
+			<a href={`tel:${FOOTER.phone.replaceAll(" ", "")}`}>
+				<Icon icon={Icons.Phone} width={32} height={32} />
+				{FOOTER.phone}
+			</a>
+			<a href={`mailto:${FOOTER.email}`}>
+				<Icon icon={Icons.Mention} width={32} height={32} />
+				{FOOTER.email}
+			</a>
+		</div>
+		<aside>
+			<h5>Zobacz również</h5>
+			<a href="#">
+				<Logo type={seeAlso.logo} />
+				<strong>{seeAlso.title}</strong>
+			</a>
+		</aside>
+	</div>
+	<div>
+		<address>{FOOTER.address}</address>
+		<ul>
+			{
+				FOOTER.socialMedia.map(({ title, link, icon }) => (
+					<li>
+						<a href={link} aria-label={title}>
+							<Icon icon={icon} />
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
 	<p>&copy; {siteName} {new Date().getFullYear()} {FOOTER.copyText}</p>
 </footer>
+
+<style>
+	footer {
+		padding: var(--spacing--2) 5vw;
+		background-color: var(--footer--background-color);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing--2);
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	address {
+		font-style: normal;
+	}
+
+	a {
+		display: flex;
+		gap: var(--spacing--1);
+	}
+
+	a[href^="tel"] {
+		font-size: var(--font-size--31);
+	}
+
+	a[href^="mailto"] {
+		font-size: var(--font-size--5);
+	}
+
+	a[href^="tel"],
+	a[href^="mailto"] {
+		font-weight: 700;
+	}
+
+	ul {
+		display: flex;
+		gap: var(--spacing--1);
+	}
+
+	p {
+		text-align: center;
+		font-size: var(--font-size--9);
+		flex: 0 0 100%;
+	}
+
+	footer > div {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	aside a {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+</style>

@@ -30,18 +30,24 @@ interface Props {
 const { services, heading, info, theme = Theme.Administracja }: Props = Astro.props;
 ---
 
-<section>
+<section id="oferta">
 	<h2>{heading}</h2>
 	{
 		services.map(({ title, bullets, icon }) => (
 			<div>
-				{icon && <Icon icon={icon} />}
+				<header>
+					{icon && <Icon icon={icon} width={48} height={48} />}
+				</header>
 				<h3>{title}</h3>
 				<ul>
 					{bullets.map(({ title, content }) => (
 						<li>
-							<h5>{title}</h5>
-							{content && <p>{content}</p>}
+							{content
+							? (
+								<h5>{title}</h5>
+								<p>{content}</p>
+							)
+							: (<span>{title}</span>)}
 						</li>
 					))}
 				</ul>
@@ -50,12 +56,14 @@ const { services, heading, info, theme = Theme.Administracja }: Props = Astro.pr
 	}
 	{
 		info && (
-			<>
-				<Icon icon={Icons.Info} />
-				<p>{info}</p>
-			</>
+			<footer>
+				<Icon icon={Icons.Info} width={32} height={32} />
+				<strong>{info}</strong>
+			</footer>
 		)
 	}
+</section>
+<aside>
 	{
 		Theme.Administracja === theme
 		? (
@@ -71,4 +79,83 @@ const { services, heading, info, theme = Theme.Administracja }: Props = Astro.pr
 			<Image src={img1} alt="" />
 		)
 	}
-</section>
+</aside>
+
+<style>
+	section {
+		padding: var(--spacing--4) 5vw;
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing--1)
+	}
+
+	section div {
+		display: flex;
+		flex-wrap: wrap;
+		column-gap: var(--spacing--3);
+		padding-top: var(--spacing--3);
+		padding-bottom: var(--spacing--4);
+	}
+
+	section div:not(:first-of-type) {
+		border-top: 1px solid var(--services--border-color);
+	}
+
+	section header {
+		flex: 0 0 100%;
+	}
+
+	section h3 {
+		flex: 0 1 33%;
+	}
+
+	section ul {
+		display: flex;
+		flex-direction: column;
+		list-style: none;
+		gap: var(--spacing--2);
+		flex: 1;
+	}
+
+	section ul:has(p) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing--3);
+	}
+
+	li span {
+		display: flex;
+		gap:var(--spacing--1);
+	}
+
+	li span::before {
+		content: '\2014';
+		color: var(--services--bullet-color);
+	}
+
+	li p {
+		color: var(--services--text-color);
+		margin-top: var(--spacing--1);
+	}
+
+	section footer {
+		display: flex;
+		gap: var(--spacing--2);
+		align-items: center;
+	}
+
+	aside {
+		display: flex;
+		justify-content: center;
+		align-items: start;
+		width: 100%;
+		overflow: hidden;
+		height: 23vw;
+		overflow: hidden;
+	}
+
+	aside img {
+		min-width: 33%;
+		height: auto;
+	}
+</style>

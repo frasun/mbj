@@ -12,16 +12,75 @@ interface Props {
 }
 
 const { title, text, theme }: Props = Astro.props;
-const SPLASH_CTA = "Sprawdź naszą ofertę";
+const SPLASH_CTA = "Zobacz naszą ofertę";
 const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 ---
 
 <section>
-	<Image src={image} alt="" />
-	<h1>{title}</h1>
-	{text.map((text) => <p>{text}</p>)}
-	<a href="#">
-		<Icon icon={IconName.ArrowDown} />
-		{SPLASH_CTA}
-	</a>
+	<figure>
+		<Image src={image} alt="" />
+	</figure>
+	<div>
+		<h1>{title}</h1>
+		{
+			text.length > 1 ? (
+				<div>
+					{text.map((text) => (
+						<p>{text}</p>
+					))}
+				</div>
+			) : (
+				<p>{text[0]}</p>
+			)
+		}
+		<div></div>
+		<a href="#oferta">
+			<Icon icon={IconName.ArrowDown} width={48} height={48} />
+			{SPLASH_CTA}
+		</a>
+	</div>
 </section>
+
+<style>
+	section {
+		display: flex;
+		background-color: var(--splash--background-color);
+	}
+
+	figure {
+		min-width: 440px;
+	}
+
+	section > div {
+		color: var(--splash--color);
+		padding: var(--spacing--4) var(--spacing--3);
+		gap: var(--spacing--2);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	section > div > div {
+		display: flex;
+		gap: var(--spacing--3);
+	}
+
+	section > div > div p {
+		flex: 0 1 100%;
+	}
+
+	p {
+		color: var(--splash--text--color);
+	}
+
+	section > div > p {
+		font-size: var(--font-size--5);
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		gap: var(--spacing--1);
+		font-weight: 700;
+	}
+</style>

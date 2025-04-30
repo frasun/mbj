@@ -17,13 +17,13 @@ const { advantages, pricing }: Props = Astro.props;
 const ADVANTAGES_HEADING = "Dlaczego my?";
 ---
 
-<section>
+<section id="dlaczego-my">
 	<h3>{ADVANTAGES_HEADING}</h3>
 	<ul>
 		{
 			advantages.map(({ title, subtitle }) => (
 				<li>
-					<Icon icon={IconName.Check} />
+					<Icon icon={IconName.Check} width={40} height={40} />
 					<h6>{title}</h6>
 					<p>{subtitle}</p>
 				</li>
@@ -31,8 +31,43 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 		}
 	</ul>
 	<div>
-		<Icon icon={IconName.Info} />
+		<Icon icon={IconName.Info} width={32} height={32} />
 		<h6>{pricing.title}</h6>
 		<p>{pricing.content}</p>
 	</div>
 </section>
+
+<style>
+	section {
+		padding: var(--spacing--2) 5vw;
+		background-color: var(--why--background-color);
+		color: var(--why--color);
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing--3);
+	}
+
+	ul {
+		list-style: none;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--spacing--3);
+	}
+
+	li,
+	div {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: auto 1fr;
+		column-gap: var(--spacing--2);
+	}
+
+	:where(li, div) :global(svg) {
+		grid-row: span 2;
+	}
+
+	div {
+		border-top: 1px solid var(--why--border-color);
+		padding-top: var(--spacing--2);
+	}
+</style>

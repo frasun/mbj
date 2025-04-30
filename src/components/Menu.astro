@@ -20,7 +20,9 @@ const { theme } = Astro.props;
 ---
 
 <nav>
-	<Logo type={theme} />
+	<a href="#">
+		<Logo type={theme} />
+	</a>
 	<ul>
 		{
 			MENU.map(({ label, link }) => (
@@ -31,3 +33,34 @@ const { theme } = Astro.props;
 		}
 	</ul>
 </nav>
+
+<style>
+	nav {
+		padding: var(--spacing--1) var(--spacing--3);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: var(--color--1);
+		border-bottom: 1px solid var(--menu--border-color);
+		position: sticky;
+		top: 0;
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		gap: var(--spacing--3);
+	}
+
+	a {
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 0.03em;
+		font-size: var(--font-size--8);
+		color: var(--menu--links--color);
+	}
+
+	nav :global(svg) {
+		color: var(--menu--logo--color);
+	}
+</style>

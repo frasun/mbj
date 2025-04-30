@@ -8,37 +8,41 @@
 	--font-size--1: 32px;
 	--font-size--2: 30px;
 	--font-size--3: 28px;
+	--font-size--31: 25px;
 	--font-size--4: 20px;
 	--font-size--5: 19px;
 	--font-size--6: 17px;
 	--font-size--7: 15px;
-	--font-size--8: 13px;
+	--font-size--8: 14px;
+	--font-size--9: 13px;
 	--line-height--1: 1.4;
 	--line-height--2: 1.15;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 body {
 	font-family: "Schibsted Grotesk Variable", sans-serif;
 	font-weight: 500;
-	font-variation-settings: "wght" 500;
 	letter-spacing: 0.01em;
 	font-size: var(--font-size--6);
 	line-height: var(--line-height--1);
-	color: var(--color--text);
+	color: var(--body--color);
+	background-color: var(--body--background-color);
 }
 
 strong,
 b {
 	font-weight: 700;
-	font-variation-settings: "wght" 700;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
 	font-family: "Readex Pro Variable", sans-serif;
 	font-weight: 500;
 	font-variation-settings: "wght" 500;
@@ -65,4 +69,17 @@ h4 {
 
 h5 {
 	font-size: var(--font-size--5);
+}
+
+h6 {
+	font-size: var(--font-size--6);
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+a:hover {
+	text-decoration: underline;
 }

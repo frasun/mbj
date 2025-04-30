@@ -1,8 +1,12 @@
 ---
 import MBJLogo from "../assets/images/logo-mbj.svg";
 import MBJSerwisLogo from "../assets/images/logo-mbj-serwis.svg";
+import { Theme } from "../layouts/index.astro";
 
+interface Props {
+	type: Theme;
+}
 const { type } = Astro.props;
 ---
 
-{"administracja" === type ? <MBJLogo /> : <MBJSerwisLogo />}
+{Theme.Administracja === type ? <MBJLogo /> : <MBJSerwisLogo />}
