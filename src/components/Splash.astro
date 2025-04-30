@@ -1,16 +1,23 @@
 ---
 import Icon, { IconName } from "./Icon.astro";
+import splashMBJ from "../assets/images/img-10.png";
+import splashMBJSerwis from "../assets/images/img-9.png";
+import { Image } from "astro:assets";
+import { Theme } from "../layouts/index.astro";
 
 interface Props {
 	title: string;
 	text: string[];
+	theme: Theme;
 }
 
-const { title, text }: Props = Astro.props;
+const { title, text, theme }: Props = Astro.props;
 const SPLASH_CTA = "Sprawdź naszą ofertę";
+const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 ---
 
 <section>
+	<Image src={image} alt="" />
 	<h1>{title}</h1>
 	{text.map((text) => <p>{text}</p>)}
 	<a href="#">
