@@ -1,0 +1,68 @@
+---
+import IconBuildings from "../assets/images/icon-buildings.svg";
+import IconCheck from "../assets/images/icon-check.svg";
+import IconDocument from "../assets/images/icon-document.svg";
+import IconGarage from "../assets/images/icon-garage.svg";
+import IconGraph from "../assets/images/icon-graph.svg";
+import IconInfo from "../assets/images/icon-info.svg";
+import IconKey from "../assets/images/icon-key.svg";
+import IconLeaf from "../assets/images/icon-leaf.svg";
+import IconMention from "../assets/images/icon-mention.svg";
+import IconPhone from "../assets/images/icon-phone.svg";
+import IconRefresh from "../assets/images/icon-refresh.svg";
+import IconScan from "../assets/images/icon-scan.svg";
+import IconStar from "../assets/images/icon-star.svg";
+import IconArrowDown from "../assets/images/icon-arrow-down.svg";
+import IconSocialFb from "../assets/images/icon-fb.svg";
+import IconSocialIg from "../assets/images/icon-ig.svg";
+
+export enum IconName {
+	Buildings = "buildings",
+	Check = "check",
+	Document = "document",
+	Garage = "garage",
+	Graph = "graph",
+	Info = "info",
+	Key = "key",
+	Leaf = "leaf",
+	Mention = "mention",
+	Phone = "phone",
+	Refresh = "refresh",
+	Scan = "scan",
+	Star = "star",
+	ArrowDown = "arrowDown",
+	SocialFb = "socialFb",
+	SocialIg = "socialIg",
+}
+
+interface Props {
+	icon: IconName;
+	width?: number;
+	height?: number;
+}
+
+const { icon, width = 24, height = 24 }: Props = Astro.props;
+
+const iconMap = {
+	buildings: IconBuildings,
+	check: IconCheck,
+	document: IconDocument,
+	garage: IconGarage,
+	graph: IconGraph,
+	info: IconInfo,
+	key: IconKey,
+	leaf: IconLeaf,
+	mention: IconMention,
+	phone: IconPhone,
+	refresh: IconRefresh,
+	scan: IconScan,
+	star: IconStar,
+	arrowDown: IconArrowDown,
+	socialFb: IconSocialFb,
+	socialIg: IconSocialIg,
+};
+
+const SVGIcon = iconMap[icon];
+---
+
+<SVGIcon width={width} height={height} />

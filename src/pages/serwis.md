@@ -9,7 +9,7 @@ servicesHeading: 'Oferujemy pełen pakiet usług dbania o czystość części ws
 services: [
 	{
 		title: "Powierzchnie wewnętrzne",
-		icon: "",
+		icon: "scan",
 		bullets: [
 			{
 				title: "Sprzątanie klatek schodowych i półpięter",
@@ -36,7 +36,7 @@ services: [
 	},
 	{
 		title: "Powierzchnie zewnętrzne",
-		icon: "",
+		icon: "garage",
 		bullets: [
 			{
 				title: "Sprzątanie chodników i podwórek, usuwanie zanieczyszczeń",
@@ -57,7 +57,7 @@ services: [
 	},
 	{
 		title: "Tereny zielone",
-		icon: "",
+		icon: "leaf",
 		bullets: [
 			{
 				title: "Kompleksowa pielęgnacja terenów zielonych",
@@ -69,7 +69,7 @@ services: [
 	},
 	{
 		title: "Dodatkowe usługi",
-		icon: "",
+		icon: "star",
 		bullets: [
 			{
 				title: "Informowanie zarządcy o usterkach występujących na terenie posesji",

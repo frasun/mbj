@@ -1,9 +1,12 @@
 ---
+import Icon, { IconName as Icons } from "./Icon.astro";
+import type { IconName } from "./Icon.astro";
+
 interface Props {
 	heading: string;
 	services: {
 		title: string;
-		icon: string;
+		icon?: IconName;
 		bullets: {
 			title: string;
 			content?: string;
@@ -18,8 +21,9 @@ const { services, heading, info }: Props = Astro.props;
 <section>
 	<h2>{heading}</h2>
 	{
-		services.map(({ title, bullets }) => (
+		services.map(({ title, bullets, icon }) => (
 			<div>
+				{icon && <Icon icon={icon} />}
 				<h3>{title}</h3>
 				<ul>
 					{bullets.map(({ title, content }) => (
@@ -32,5 +36,12 @@ const { services, heading, info }: Props = Astro.props;
 			</div>
 		))
 	}
-	{info && <p>{info}</p>}
+	{
+		info && (
+			<>
+				<Icon icon={Icons.Info} />
+				<p>{info}</p>
+			</>
+		)
+	}
 </section>

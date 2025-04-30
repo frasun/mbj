@@ -1,5 +1,6 @@
 ---
 import Logo from "./Logo.astro";
+import Icon, { IconName as Icons } from "./Icon.astro";
 
 interface Props {
 	siteName: string;
@@ -20,10 +21,12 @@ const FOOTER = {
 		{
 			title: "fb",
 			link: "",
+			icon: Icons.SocialFb,
 		},
 		{
 			title: "ig",
 			link: "",
+			icon: Icons.SocialIg,
 		},
 	],
 	copyText: "Wszelkie prwa zastrzeżone",
@@ -32,8 +35,14 @@ const FOOTER = {
 
 <footer>
 	<h4>{FOOTER.title}</h4>
-	<a href={`tel:${FOOTER.phone.replaceAll(" ", "")}`}>{FOOTER.phone}</a>
-	<a href={`mailto:${FOOTER.email}`}>{FOOTER.email}</a>
+	<a href={`tel:${FOOTER.phone.replaceAll(" ", "")}`}>
+		<Icon icon={Icons.Phone} />
+		{FOOTER.phone}
+	</a>
+	<a href={`mailto:${FOOTER.email}`}>
+		<Icon icon={Icons.Mention} />
+		{FOOTER.email}
+	</a>
 	<address>{FOOTER.address}</address>
 	<aside>
 		<h5>Zobacz również</h5>
@@ -42,10 +51,10 @@ const FOOTER = {
 	</aside>
 	<ul>
 		{
-			FOOTER.socialMedia.map(({ title, link }) => (
+			FOOTER.socialMedia.map(({ title, link, icon }) => (
 				<li>
 					<a href={link} aria-label={title}>
-						{title}
+						<Icon icon={icon} />
 					</a>
 				</li>
 			))

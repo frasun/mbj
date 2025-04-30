@@ -10,7 +10,7 @@ servicesHeading: 'Oferujemy pełen pakiet usług, który obejmuje zarówno bież
 services: [
 	{
 		title: "Obsługa administracyjna",
-		icon: "",
+		icon: "key",
 		bullets: [
 			{
 				title: "Reprezentacja wspólnoty",
@@ -36,7 +36,7 @@ services: [
 	},
 	{
 		title: "Obsługa finansowo-księgowa",
-		icon: "",
+		icon: "graph",
 		bullets: [
 			{
 				title: "Prowadzenie księgowości",
@@ -61,7 +61,7 @@ services: [
 	},
 	{
 		title: "Obsługa techniczna",
-		icon: "",
+		icon: "refresh",
 		bullets: [
 			{
 				title: "Nadzór nad stanem technicznym",
@@ -87,7 +87,7 @@ services: [
 	},
 	{
 		title: "Obsługa prawna",
-		icon: "",
+		icon: "document",
 		bullets: [
 			{
 				title: "Doradztwo prawne",
@@ -108,7 +108,7 @@ services: [
 	},
 	{
 		title: "Przejmowanie budynków od dewelopera",
-		icon: "",
+		icon: "buildings",
 		bullets: [
 			{
 				title: "Analiza dokumentacji",
@@ -134,7 +134,7 @@ services: [
 	},
 	{
 		title: "Dodatkowe usługi",
-		icon: "",
+		icon: "star",
 		bullets: [
 			{
 				title: "Platforma online",

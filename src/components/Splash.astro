@@ -1,4 +1,6 @@
 ---
+import Icon, { IconName } from "./Icon.astro";
+
 interface Props {
 	title: string;
 	text: string[];
@@ -11,5 +13,8 @@ const SPLASH_CTA = "Sprawdź naszą ofertę";
 <section>
 	<h1>{title}</h1>
 	{text.map((text) => <p>{text}</p>)}
-	<a href="#">{SPLASH_CTA}</a>
+	<a href="#">
+		<Icon icon={IconName.ArrowDown} />
+		{SPLASH_CTA}
+	</a>
 </section>

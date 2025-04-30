@@ -1,4 +1,6 @@
 ---
+import Icon, { IconName } from "./Icon.astro";
+
 interface Props {
 	advantages: {
 		title: string;
@@ -21,6 +23,7 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 		{
 			advantages.map(({ title, subtitle }) => (
 				<li>
+					<Icon icon={IconName.Check} />
 					<h6>{title}</h6>
 					<p>{subtitle}</p>
 				</li>
@@ -28,6 +31,7 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 		}
 	</ul>
 	<div>
+		<Icon icon={IconName.Info} />
 		<h6>{pricing.title}</h6>
 		<p>{pricing.content}</p>
 	</div>
