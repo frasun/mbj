@@ -1,20 +1,39 @@
 ---
-const { theme } = Astro.props;
-
+import type { Theme } from "./index.astro";
 import "@fontsource-variable/schibsted-grotesk";
 import "@fontsource-variable/readex-pro";
 import "../assets/styles/style.css";
+
+interface Props {
+	theme: Theme;
+	pageTitle: string;
+	metaDescription: string;
+	metaKeywords: string;
+}
+
+const { theme, pageTitle, metaKeywords, metaDescription } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="keywords" content={metaKeywords} />
+		<meta name="description" content={metaDescription} />
+		<meta name="author" content="seekthekingdom" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content=`/mbj-${theme}-og-image.png` />
+		<meta property="og:url" content="https://mbj.com.pl" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="og:description" content={metaDescription} />
+		<meta property="og:site_name" content={pageTitle} />
+		<meta name="twitter:image:alt" content={pageTitle} />
+		<title>{pageTitle}</title>
 		<link rel="stylesheet" href=`/themes/${theme}.css` />
+		<link rel="icon" type="image/svg+xml" href=`/mbj-${theme}.svg` />
 	</head>
 	<body>
 		<slot />
