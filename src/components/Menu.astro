@@ -36,7 +36,7 @@ const { theme } = Astro.props;
 
 <style>
 	nav {
-		padding: var(--spacing--1) var(--spacing--3);
+		padding: var(--spacing--1) min(var(--spacing--3), 3vw);
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -44,6 +44,11 @@ const { theme } = Astro.props;
 		border-bottom: 1px solid var(--menu--border-color);
 		position: sticky;
 		top: 0;
+	}
+
+	nav :global(svg) {
+		width: max(90px, 4.53125vw + 2rem);
+		height: auto;
 	}
 
 	ul {
@@ -64,7 +69,7 @@ const { theme } = Astro.props;
 		text-transform: uppercase;
 		font-weight: 700;
 		letter-spacing: 0.03em;
-		font-size: var(--font-size--8);
+		font-size: max(var(--font-size--8), 0.703125vw + 0.25rem);
 		color: var(--menu--links--color);
 	}
 

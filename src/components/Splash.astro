@@ -33,7 +33,6 @@ const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 				<p>{text[0]}</p>
 			)
 		}
-		<div></div>
 		<a href="#oferta">
 			<Icon icon={IconName.ArrowDown} width={48} height={48} />
 			{SPLASH_CTA}
@@ -61,12 +60,15 @@ const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 
 	section > div {
 		color: var(--splash--color);
-		padding: var(--spacing--3);
-		gap: var(--spacing--2);
+		padding: min(var(--spacing--container), var(--spacing--3));
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		flex: 1 1 60%;
+	}
+
+	h1 {
+		margin-bottom: max(0.625em, var(--spacing--2));
 	}
 
 	@media (max-width: 799px) {
@@ -82,7 +84,8 @@ const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 	section > div > div {
 		display: flex;
 		flex-wrap: wrap;
-		gap: var(--spacing--3);
+		gap: 1em 2.35em;
+		font-size: clamp(var(--font-size--6), 0.7vw + 0.5rem, 1.5rem);
 	}
 
 	section > div > div p {
@@ -94,7 +97,7 @@ const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 	}
 
 	section > div > p {
-		font-size: var(--font-size--5);
+		font-size: clamp(var(--font-size--5), 0.735vw + 0.5rem, 1.5rem);
 	}
 
 	a {
@@ -102,5 +105,11 @@ const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 		align-items: center;
 		gap: var(--spacing--1);
 		font-weight: 700;
+		padding: max(var(--spacing--2), 2.35vw) 0;
+	}
+
+	a :global(svg) {
+		height: auto;
+		width: max(3.125vw, 40px);
 	}
 </style>

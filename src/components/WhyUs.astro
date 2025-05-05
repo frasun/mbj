@@ -39,7 +39,7 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 
 <style>
 	section {
-		padding: var(--spacing--3) 5vw;
+		padding: var(--spacing--3) var(--spacing--container);
 		background-color: var(--why--background-color);
 		color: var(--why--color);
 		display: flex;
@@ -70,6 +70,11 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 
 	:where(li, div) :global(svg) {
 		grid-row: span 2;
+	}
+
+	li :global(svg) {
+		height: auto;
+		width: clamp(32px, 3.125vw, 40px);
 	}
 
 	div {

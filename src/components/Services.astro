@@ -83,7 +83,7 @@ const { services, heading, info, theme = Theme.Administracja }: Props = Astro.pr
 
 <style>
 	section {
-		padding: var(--spacing--4) 5vw;
+		padding: var(--spacing--4) var(--spacing--container);
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing--1)
@@ -104,6 +104,11 @@ const { services, heading, info, theme = Theme.Administracja }: Props = Astro.pr
 
 	section header {
 		flex: 0 0 100%;
+	}
+
+	section header :global(svg) {
+		height: auto;
+		width: clamp(40px, 3.725vw, 48px);
 	}
 
 	section h3 {
@@ -152,6 +157,10 @@ const { services, heading, info, theme = Theme.Administracja }: Props = Astro.pr
 		align-items: center;
 	}
 
+	section footer :global(svg) {
+		flex-shrink: 0;
+	}
+
 	aside {
 		display: flex;
 		justify-content: center;
@@ -163,6 +172,12 @@ const { services, heading, info, theme = Theme.Administracja }: Props = Astro.pr
 	aside img {
 		min-width: 33%;
 		height: auto;
+	}
+
+	@media (max-width: 700px) {
+		section h3 {
+			flex: 0 0 100%;
+		}
 	}
 
 	@media (max-width: 600px) {
