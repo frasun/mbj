@@ -38,7 +38,7 @@ const { theme } = Astro.props;
 	nav {
 		padding: var(--spacing--1) var(--spacing--3);
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		align-items: center;
 		background-color: var(--color--1);
 		border-bottom: 1px solid var(--menu--border-color);
@@ -49,7 +49,15 @@ const { theme } = Astro.props;
 	ul {
 		list-style: none;
 		display: flex;
+		justify-content: end;
+		flex: 1;
 		gap: var(--spacing--3);
+	}
+
+	@media (max-width: 600px) {
+		ul {
+			display: none;
+		}
 	}
 
 	a {

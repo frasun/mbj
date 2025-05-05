@@ -39,7 +39,7 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 
 <style>
 	section {
-		padding: var(--spacing--2) 5vw;
+		padding: var(--spacing--3) 5vw;
 		background-color: var(--why--background-color);
 		color: var(--why--color);
 		display: flex;
@@ -52,6 +52,12 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: var(--spacing--3);
+	}
+
+	@media (max-width: 800px) {
+		ul {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	li,

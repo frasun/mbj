@@ -1,20 +1,23 @@
 @import "reset.css";
 
 :root {
+	/* Gaps */
 	--spacing--1: 10px;
 	--spacing--2: 20px;
 	--spacing--3: 40px;
 	--spacing--4: 80px;
+	/* Font size */
 	--font-size--1: 32px;
 	--font-size--2: 30px;
 	--font-size--3: 28px;
-	--font-size--31: 25px;
 	--font-size--4: 20px;
 	--font-size--5: 19px;
 	--font-size--6: 17px;
 	--font-size--7: 15px;
 	--font-size--8: 14px;
 	--font-size--9: 13px;
+	--font-size--10: 25px;
+	/* Line height */
 	--line-height--1: 1.4;
 	--line-height--2: 1.15;
 }

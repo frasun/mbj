@@ -36,46 +36,42 @@ const FOOTER = {
 ---
 
 <footer id="kontakt">
-	<div>
-		<div>
-			<h4>{FOOTER.title}</h4>
-			<a href={`tel:${FOOTER.phone.replaceAll(" ", "")}`}>
-				<Icon icon={Icons.Phone} width={32} height={32} />
-				{FOOTER.phone}
-			</a>
-			<a href={`mailto:${FOOTER.email}`}>
-				<Icon icon={Icons.Mention} width={32} height={32} />
-				{FOOTER.email}
-			</a>
-		</div>
-		<aside>
-			<h5>Zobacz również</h5>
-			<a href="#">
-				<Logo type={seeAlso.logo} />
-				<strong>{seeAlso.title}</strong>
-			</a>
-		</aside>
-	</div>
-	<div>
-		<address>{FOOTER.address}</address>
-		<ul>
-			{
-				FOOTER.socialMedia.map(({ title, link, icon }) => (
-					<li>
-						<a href={link} aria-label={title}>
-							<Icon icon={icon} />
-						</a>
-					</li>
-				))
-			}
-		</ul>
-	</div>
+	<address>
+		<h4>{FOOTER.title}</h4>
+		<a href={`tel:${FOOTER.phone.replaceAll(" ", "")}`}>
+			<Icon icon={Icons.Phone} width={32} height={32} />
+			{FOOTER.phone}
+		</a>
+		<a href={`mailto:${FOOTER.email}`}>
+			<Icon icon={Icons.Mention} width={32} height={32} />
+			{FOOTER.email}
+		</a>
+		<p>{FOOTER.address}</p>
+	</address>
+	<ul>
+		{
+			FOOTER.socialMedia.map(({ title, link, icon }) => (
+				<li>
+					<a href={link} aria-label={title}>
+						<Icon icon={icon} width={32} height={32} />
+					</a>
+				</li>
+			))
+		}
+	</ul>
+	<aside>
+		<h5>Zobacz również</h5>
+		<a href="#">
+			<Logo type={seeAlso.logo} />
+			<strong>{seeAlso.title}</strong>
+		</a>
+	</aside>
 	<p>&copy; {siteName} {new Date().getFullYear()} {FOOTER.copyText}</p>
 </footer>
 
 <style>
 	footer {
-		padding: var(--spacing--2) 5vw;
+		padding: var(--spacing--3) 5vw var(--spacing--2);
 		background-color: var(--footer--background-color);
 		display: flex;
 		flex-direction: column;
@@ -88,15 +84,26 @@ const FOOTER = {
 
 	address {
 		font-style: normal;
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing--1);
+	}
+
+	address h4 {
+		margin-bottom: var(--spacing--1);
+	}
+
+	address p {
+		margin-top: var(--spacing--2);
 	}
 
 	a {
 		display: flex;
-		gap: var(--spacing--1);
+		gap: var(--spacing--2);
 	}
 
 	a[href^="tel"] {
-		font-size: var(--font-size--31);
+		font-size: var(--font-size--10);
 	}
 
 	a[href^="mailto"] {
@@ -110,10 +117,10 @@ const FOOTER = {
 
 	ul {
 		display: flex;
-		gap: var(--spacing--1);
+		gap: var(--spacing--2);
 	}
 
-	p {
+	footer > p {
 		text-align: center;
 		font-size: var(--font-size--9);
 		flex: 0 0 100%;
@@ -128,5 +135,54 @@ const FOOTER = {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+	}
+
+	@media (min-width: 800px) {
+		footer {
+			display: grid;
+		}
+
+		address {
+			grid-area: 1 / 1 / span 2 / 2;
+		}
+
+		address h4 {
+			max-width: 600px;
+		}
+
+		ul {
+			grid-area: 2 / 2 / 2 / 2;
+			align-self: end;
+			justify-self: end;
+		}
+
+		aside {
+			grid-area: 1 / 2 / 1 / 2;
+			justify-self: end;
+		}
+
+		aside strong {
+			max-width: 200px;
+		}
+
+		footer > p {
+			grid-area: 3 / span 2;
+		}
+	}
+
+	@media (max-width: 800px) {
+		ul {
+			justify-content: center;
+		}
+
+		aside {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		aside a {
+			flex-direction: column;
+		}
 	}
 </style>

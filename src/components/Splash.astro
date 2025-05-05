@@ -48,25 +48,45 @@ const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 	}
 
 	figure {
-		min-width: 440px;
+		flex: 1 1 40%;
+		max-height: 90vh;
+		overflow: hidden;
+	}
+
+	figure img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	section > div {
 		color: var(--splash--color);
-		padding: var(--spacing--4) var(--spacing--3);
+		padding: var(--spacing--3);
 		gap: var(--spacing--2);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		flex: 1 1 60%;
+	}
+
+	@media (max-width: 799px) {
+		section {
+			flex-direction: column;
+		}
+
+		section figure {
+			order: 2;
+		}
 	}
 
 	section > div > div {
 		display: flex;
+		flex-wrap: wrap;
 		gap: var(--spacing--3);
 	}
 
 	section > div > div p {
-		flex: 0 1 100%;
+		flex: 1 0 min-content;
 	}
 
 	p {
