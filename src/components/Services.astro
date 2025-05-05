@@ -24,10 +24,11 @@ interface Props {
 		}[];
 	}[];
 	info?: string;
-	theme: Theme
+	theme: Theme;
+	imageAlt: string
 }
 
-const { services, heading, info, theme = Theme.Administracja }: Props = Astro.props;
+const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props = Astro.props;
 ---
 
 <section id="oferta">
@@ -67,16 +68,16 @@ const { services, heading, info, theme = Theme.Administracja }: Props = Astro.pr
 	{
 		Theme.Administracja === theme
 		? (
-			<Image src={img8} alt="" />
-			<Image src={img4} alt="" />
-			<Image src={img6} alt="" />
-			<Image src={img2} alt="" />
+			<Image src={img8} alt={imageAlt} />
+			<Image src={img4} alt={imageAlt} />
+			<Image src={img6} alt={imageAlt} />
+			<Image src={img2} alt={imageAlt} />
 		)
 		: (
-			<Image src={img7} alt="" />
-			<Image src={img3} alt="" />
-			<Image src={img5} alt="" />
-			<Image src={img1} alt="" />
+			<Image src={img7} alt={imageAlt} />
+			<Image src={img3} alt={imageAlt} />
+			<Image src={img5} alt={imageAlt} />
+			<Image src={img1} alt={imageAlt} />
 		)
 	}
 </aside>

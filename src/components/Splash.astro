@@ -9,16 +9,17 @@ interface Props {
 	title: string;
 	text: string[];
 	theme: Theme;
+	imageAlt: string;
 }
 
-const { title, text, theme }: Props = Astro.props;
+const { title, text, theme, imageAlt }: Props = Astro.props;
 const SPLASH_CTA = "Zobacz naszą ofertę";
 const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 ---
 
 <section>
 	<figure>
-		<Image src={image} alt="" />
+		<Image src={image} alt={imageAlt} />
 	</figure>
 	<div>
 		<h1>{title}</h1>

@@ -38,12 +38,18 @@ const {
 	metaKeywords={keywords}
 >
 	<Menu theme={theme} />
-	<Splash title={splashTitle} text={splashText} theme={theme} />
+	<Splash
+		title={splashTitle}
+		text={splashText}
+		theme={theme}
+		imageAlt={title}
+	/>
 	<Services
 		heading={servicesHeading}
 		services={services}
 		info={servicesInfo}
 		theme={theme}
+		imageAlt={title}
 	/>
 	<WhyUs advantages={advantages} pricing={pricing} />
 	<Footer siteName={SITE_NAME} seeAlso={seeAlso} />
