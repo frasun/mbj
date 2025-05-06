@@ -89,6 +89,9 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing--1);
+		position: relative;
+		z-index: 1;
+		background: var(--body--background-color);
 	}
 
 	section div {
@@ -163,6 +166,8 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 		align-items: start;
 		width: 100%;
 		overflow: hidden;
+		position: relative;
+		z-index: 1;
 	}
 
 	aside img {
