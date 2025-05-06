@@ -96,3 +96,8 @@ a:active {
 	transition: none;
 	opacity: 1;
 }
+
+[data-fade],
+[data-splash] {
+	visibility: hidden;
+}

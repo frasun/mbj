@@ -18,23 +18,23 @@ const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 ---
 
 <section>
-	<figure>
+	<figure data-splash>
 		<Image src={image} alt={imageAlt} />
 	</figure>
 	<div>
-		<h1>{title}</h1>
+		<h1 data-fade>{title}</h1>
 		{
 			text.length > 1 ? (
 				<div>
 					{text.map((text) => (
-						<p>{text}</p>
+						<p data-fade>{text}</p>
 					))}
 				</div>
 			) : (
-				<p>{text[0]}</p>
+				<p data-fade>{text[0]}</p>
 			)
 		}
-		<a href="#oferta">
+		<a href="#oferta" data-fade>
 			<Icon icon={IconName.ArrowDown} width={48} height={48} />
 			{SPLASH_CTA}
 		</a>

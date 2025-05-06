@@ -32,17 +32,17 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 ---
 
 <section id="oferta">
-	<h2>{heading}</h2>
+	<h2 data-fade>{heading}</h2>
 	{
 		services.map(({ title, bullets, icon }) => (
 			<div>
-				<header>
+				<header data-fade>
 					{icon && <Icon icon={icon} width={48} height={48} />}
 				</header>
-				<h3>{title}</h3>
+				<h3 data-fade>{title}</h3>
 				<ul>
 					{bullets.map(({ title, content }) => (
-						<li>
+						<li data-fade>
 							{content
 							? (
 								<h5>{title}</h5>
@@ -57,7 +57,7 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 	}
 	{
 		info && (
-			<footer>
+			<footer data-fade>
 				<Icon icon={Icons.Info} width={32} height={32} />
 				<strong>{info}</strong>
 			</footer>

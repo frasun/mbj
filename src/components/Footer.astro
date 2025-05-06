@@ -38,11 +38,11 @@ const FOOTER = {
 <footer id="kontakt">
 	<address>
 		<h4>{FOOTER.title}</h4>
-		<a href={`tel:${FOOTER.phone.replaceAll(" ", "")}`}>
+		<a href={`tel:${FOOTER.phone.replaceAll(" ", "")}`} data-fade>
 			<Icon icon={Icons.Phone} width={32} height={32} />
 			{FOOTER.phone}
 		</a>
-		<a href={`mailto:${FOOTER.email}`}>
+		<a href={`mailto:${FOOTER.email}`} data-fade>
 			<Icon icon={Icons.Mention} width={32} height={32} />
 			{FOOTER.email}
 		</a>

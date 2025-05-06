@@ -22,7 +22,7 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 	<ul>
 		{
 			advantages.map(({ title, subtitle }) => (
-				<li>
+				<li data-fade>
 					<Icon icon={IconName.Check} width={40} height={40} />
 					<h6>{title}</h6>
 					<p>{subtitle}</p>
@@ -30,7 +30,7 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 			))
 		}
 	</ul>
-	<div>
+	<div data-fade>
 		<Icon icon={IconName.Info} width={32} height={32} />
 		<h6>{pricing.title}</h6>
 		<p>{pricing.content}</p>
