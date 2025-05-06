@@ -36,7 +36,7 @@ const { theme } = Astro.props;
 
 <style>
 	nav {
-		padding: var(--spacing--1) min(var(--spacing--3), 3vw);
+		padding: var(--header--padding) min(var(--spacing--3), 3vw);
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -47,8 +47,8 @@ const { theme } = Astro.props;
 	}
 
 	nav :global(svg) {
-		width: max(90px, 4.53125vw + 2rem);
-		height: auto;
+		width: auto;
+		height: var(--menu--logo--height);
 	}
 
 	ul {

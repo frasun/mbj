@@ -85,7 +85,7 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 <style>
 	section {
 		padding: var(--spacing--4) var(--spacing--container);
-		scroll-margin-top: var(--spacing--4);
+		scroll-margin-top: var(--header--height);
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing--1);
@@ -115,7 +115,7 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 
 	section h3 {
 		flex: 1 1 33%;
-		margin-bottom: var(--spacing--2);
+		margin-bottom: .75em;
 	}
 
 	section ul {
@@ -130,12 +130,6 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: var(--spacing--3);
-	}
-
-	@media (max-width: 900px) {
-		section ul:has(p) {
-			grid-template-columns: 1fr;
-		}
 	}
 
 	li span {
@@ -174,6 +168,18 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 	aside img {
 		min-width: 33%;
 		height: auto;
+	}
+
+	@media (max-width: 900px) {
+		section ul:has(p) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media(min-width: 700px) {
+		h2 {
+			max-width: max(650px, 50vw);
+		}
 	}
 
 	@media (max-width: 700px) {

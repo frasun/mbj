@@ -12,6 +12,7 @@
 
 	/* Menu */
 	--menu--logo--color: var(--color--4);
+	--menu--logo--height: max(60px, 2.1875vw + 2rem);
 	--menu--links--color: var(--color--4);
 	--menu--border-color: var(--color--6);
 
