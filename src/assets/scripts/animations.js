@@ -16,5 +16,6 @@ function init() {
 	gsap.to("[data-splash]", {
 		autoAlpha: 1,
 		x: 0,
+		duration: 1,
 	});
 }
