@@ -15,6 +15,7 @@
 	--menu--logo--height: max(60px, 2.1875vw + 2rem);
 	--menu--links--color: var(--color--4);
 	--menu--border-color: var(--color--6);
+	--menu--padding: calc(var(--spacing--1) * 0.5);
 
 	/* Splash */
 	--splash--color: var(--color--4);
