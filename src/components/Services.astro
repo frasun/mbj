@@ -64,7 +64,7 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 		)
 	}
 </section>
-<aside>
+<aside data-slide>
 	{
 		Theme.Administracja === theme
 		? (
@@ -167,7 +167,8 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 		width: 100%;
 		overflow: hidden;
 		position: relative;
-		z-index: 1;
+		z-index: 12;
+		background-color: var(--body--background-color);
 	}
 
 	aside img {

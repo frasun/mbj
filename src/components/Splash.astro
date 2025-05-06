@@ -112,8 +112,29 @@ const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 		padding: max(var(--spacing--2), 2.35vw) 0;
 	}
 
+	@keyframes bounce2 {
+		0%,
+		20%,
+		50%,
+		80%,
+		100% {
+			transform: translateY(0);
+		}
+		40% {
+			transform: translateY(-10%);
+		}
+		60% {
+			transform: translateY(-5%);
+		}
+	}
+
 	a :global(svg) {
 		height: auto;
 		width: max(3.125vw, 40px);
+		animation: bounce2 1.2s ease infinite;
+	}
+
+	a:hover :global(svg) {
+		animation: none;
 	}
 </style>

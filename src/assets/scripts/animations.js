@@ -12,10 +12,33 @@ function init() {
 		onEnter: (batch) => gsap.to(batch, { autoAlpha: 1, y: 0, stagger: 0.15 }),
 	});
 
-	gsap.set("[data-splash]", { autoAlpha: 0, x: "-10%" });
+	gsap.set("[data-splash]", {
+		autoAlpha: 0,
+		xPercent: window.innerWidth >= 800 ? -10 : 0,
+		y: window.innerWidth < 800 ? 20 : 0,
+	});
 	gsap.to("[data-splash]", {
 		autoAlpha: 1,
-		x: 0,
+		xPercent: 0,
+		y: 0,
 		duration: 1,
+	});
+
+	let mm = gsap.matchMedia();
+
+	mm.add("(min-width: 601px)", () => {
+		gsap.set("[data-slide] img", { x: "15vw", autoAlpha: 0 });
+		gsap.to("[data-slide] img", {
+			autoAlpha: 1,
+		});
+		gsap.to("[data-slide] img", {
+			scrollTrigger: {
+				trigger: "[data-slide] img",
+				scrub: 1,
+				start: "top bottom",
+				end: "bottom top",
+			},
+			x: "-15vw",
+		});
 	});
 }
