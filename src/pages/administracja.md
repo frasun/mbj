@@ -187,6 +187,6 @@ pricing: {
 seeAlso: {
   title: "Profesjonalne usługi porządkowe",
   logo: "serwis",
-  link: "",
+  link: "serwis",
 }
 ---

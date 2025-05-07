@@ -98,7 +98,12 @@ a:active {
 }
 
 [data-fade],
-[data-splash],
-[data-slide] img {
+[data-splash] {
 	visibility: hidden;
+}
+
+@media (min-width: 601px) {
+	[data-slide] img {
+		visibility: hidden;
+	}
 }

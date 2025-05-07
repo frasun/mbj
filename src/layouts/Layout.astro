@@ -25,15 +25,25 @@ const { theme, pageTitle, metaKeywords, metaDescription } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:type" content="website" />
-		<meta property="og:image" content=`/mbj-${theme}-og-image.png` />
+		<meta
+			property="og:image"
+			content=`${import.meta.env.BASE_URL}/mbj-${theme}-og-image.png`
+		/>
 		<meta property="og:url" content="https://mbj.com.pl" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta property="og:description" content={metaDescription} />
 		<meta property="og:site_name" content={pageTitle} />
 		<meta name="twitter:image:alt" content={pageTitle} />
 		<title>{pageTitle}</title>
-		<link rel="stylesheet" href=`/themes/${theme}.css` />
-		<link rel="icon" type="image/svg+xml" href=`/mbj-${theme}.svg` />
+		<link
+			rel="stylesheet"
+			href=`${import.meta.env.BASE_URL}themes/${theme}.css`
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href=`${import.meta.env.BASE_URL}mbj-${theme}.svg`
+		/>
 	</head>
 	<body>
 		<slot />

@@ -107,6 +107,6 @@ pricing: {
 seeAlso: {
   title: "Zarządzanie i administrowanie nieruchomościami",
   logo: "administracja",
-  link: "",
+  link: "administracja",
 }
 ---

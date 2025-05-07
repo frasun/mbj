@@ -16,8 +16,8 @@ const { siteName, seeAlso }: Props = Astro.props;
 const FOOTER = {
 	title:
 		"Zapraszamy do kontaktu w celu omówienia szczegółów i dostosowania oferty do Twoich potrzeb",
-	phone: "+48 502 123 123",
-	email: "aaa@aaa.pl",
+	phone: "+48=502=123=123",
+	email: "aaa+++aaa.pl",
 	address: "ul. Stefana Jaracza 2, 91-123 Łódź",
 	socialMedia: [
 		{
@@ -38,14 +38,16 @@ const FOOTER = {
 <footer id="kontakt">
 	<address>
 		<h4>{FOOTER.title}</h4>
-		<a href={`tel:${FOOTER.phone.replaceAll(" ", "")}`} data-fade>
-			<Icon icon={Icons.Phone} width={32} height={32} />
-			{FOOTER.phone}
-		</a>
-		<a href={`mailto:${FOOTER.email}`} data-fade>
-			<Icon icon={Icons.Mention} width={32} height={32} />
-			{FOOTER.email}
-		</a>
+		<contact-link data-number={FOOTER.phone}>
+			<a href="#">
+				<Icon icon={Icons.Phone} width={32} height={32} />
+			</a>
+		</contact-link>
+		<contact-link data-email={FOOTER.email}>
+			<a href="#">
+				<Icon icon={Icons.Mention} width={32} height={32} />
+			</a>
+		</contact-link>
 		<p>{FOOTER.address}</p>
 	</address>
 	<ul>
@@ -61,7 +63,7 @@ const FOOTER = {
 	</ul>
 	<aside>
 		<h5>Zobacz również</h5>
-		<a href="#">
+		<a href={`${import.meta.env.SITE}/${seeAlso.link}`} target="_blank">
 			<Logo type={seeAlso.logo} />
 			<strong>{seeAlso.title}</strong>
 		</a>
@@ -104,22 +106,22 @@ const FOOTER = {
 	a {
 		display: flex;
 		gap: var(--spacing--2);
+		align-items: center;
 	}
 
 	address a {
 		gap: min(2vw, var(--spacing--2));
 	}
 
-	a[href^="tel"] {
+	contact-link[data-number] a {
 		font-size: var(--font-size--10);
 	}
 
-	a[href^="mailto"] {
+	contact-link[data-email] a {
 		font-size: var(--font-size--5);
 	}
 
-	a[href^="tel"],
-	a[href^="mailto"] {
+	contact-link a {
 		font-weight: 700;
 	}
 
@@ -206,3 +208,56 @@ const FOOTER = {
 		}
 	}
 </style>
+
+<script>
+	class ContactLink extends HTMLElement {
+		number: string | undefined;
+		email: string | undefined;
+		linkElement: HTMLAnchorElement | null | undefined;
+		linkText: string | undefined;
+
+		connectedCallback() {
+			this.number = this.dataset.number;
+			this.email = this.dataset.email;
+			this.linkElement = this.querySelector("a");
+			this.linkText = undefined;
+
+			if (!this.linkElement) return;
+
+			if (this.number) {
+				this.linkText = this.number.replaceAll("=", " ");
+			} else if (this.email) {
+				this.linkText = this.email.replaceAll("+++", "@");
+			}
+
+			document.addEventListener(
+				"DOMContentLoaded",
+				this.fillContactInfo.bind(this)
+			);
+			this.linkElement.addEventListener("click", this.handleClick.bind(this));
+		}
+
+		fillContactInfo() {
+			if (this.linkText && this.linkElement) {
+				this.linkElement.innerHTML += `<span>${this.linkText}</span>`;
+			}
+		}
+
+		handleClick(e: Event) {
+			e.preventDefault();
+			let link;
+
+			if (this.number) {
+				link = `tel:${this.linkText}`;
+			} else if (this.email) {
+				link = `mailto:${this.linkText}`;
+			}
+
+			if (link) {
+				window.open(link, "_self");
+			}
+		}
+	}
+
+	customElements.define("contact-link", ContactLink);
+</script>
