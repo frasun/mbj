@@ -8,7 +8,7 @@
 
 	/* Body */
 	--body--color: var(--color--4);
-	--body--background-color: var(--color--3);
+	--body--background-color: var(--color--1);
 
 	/* Menu */
 	--menu--logo--color: var(--color--3);
@@ -23,6 +23,7 @@
 	--splash--background-color: var(--color--1);
 
 	/* Services */
+	--services--background-color: var(--color--3);
 	--services--border-color: var(--color--6);
 	--services--text-color: var(--color--5);
 
