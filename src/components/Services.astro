@@ -92,6 +92,8 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 		position: relative;
 		z-index: 100;
 		background: var(--services--background-color);
+		/* Safari fix */
+		transform: translate3d(0,0,0);
 	}
 
 	section div {
@@ -169,6 +171,8 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 		position: relative;
 		z-index: 100;
 		background-color: var(--body--background-color);
+		/* Safari fix */
+		transform: translate3d(0,0,0);
 	}
 
 	aside img {
