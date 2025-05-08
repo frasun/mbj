@@ -5,6 +5,7 @@ import Splash from "../components/Splash.astro";
 import Services from "../components/Services.astro";
 import WhyUs from "../components/WhyUs.astro";
 import Footer from "../components/Footer.astro";
+import GA from "../components/GA.astro";
 
 export enum Theme {
 	Administracja = "administracja",
@@ -32,6 +33,7 @@ const {
 } = Astro.props;
 
 const title = `${siteName} - ${siteDescription}`;
+const gaCode = Theme.Administracja === theme ? "J7MHHZ0TZ2" : "XFWQGGG5RS";
 ---
 
 <Layout
@@ -57,5 +59,6 @@ const title = `${siteName} - ${siteDescription}`;
 	<WhyUs advantages={advantages} pricing={pricing} />
 	<Footer siteName={SITE_NAME} seeAlso={seeAlso} />
 </Layout>
+{import.meta.env.PROD && <GA ga={gaCode} />}
 
 <script src="../assets/scripts/animations.js"></script>

@@ -6,7 +6,9 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.set("[data-fade]", { autoAlpha: 0, y: 20 });
 ScrollTrigger.batch("[data-fade]", {
 	batchMax: 3,
-	onEnter: (batch) => gsap.to(batch, { autoAlpha: 1, y: 0, stagger: 0.15 }),
+	onEnter: (batch) =>
+		gsap.to(batch, { autoAlpha: 1, y: 0, stagger: 0.15, clearProps: "scale" }),
+	once: true,
 });
 
 gsap.set("[data-splash]", {
@@ -19,6 +21,7 @@ gsap.to("[data-splash]", {
 	xPercent: 0,
 	y: 0,
 	duration: 1,
+	clearProps: "scale",
 });
 
 let mm = gsap.matchMedia();
@@ -34,7 +37,9 @@ mm.add("(min-width: 601px)", () => {
 			scrub: 1,
 			start: "top bottom",
 			end: "bottom top",
+			once: true,
 		},
 		x: "-15vw",
+		clearProps: "scale",
 	});
 });
