@@ -1,7 +1,8 @@
 ---
 layout: ../layouts/index.astro
 theme: serwis
-title: MBJ - Profesjonalne usługi utrzymania czystości
+siteName: MBJ Serwis
+siteDescription: Profesjonalne usługi utrzymania czystości
 description: Profesjonalne usługi utrzymania w czystości powierzchni wszelkich nieruchomości na terenie Łodzi
 keywords: sprzątanie mieszkań Łódź, firma sprzątająca Łódź, czyszczenie nieruchomości mieszkaniowych, sprzątanie klatek schodowych, profesjonalne sprzątanie Łódź
 splashTitle: 'Profesjonalne usługi utrzymania w czystości powierzchni wszelkich nieruchomości'

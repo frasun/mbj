@@ -1,7 +1,8 @@
 ---
 layout: ../layouts/index.astro
 theme: administracja
-title: MBJ - Administracja i zarządzanie nieruchomościami
+siteName: MBJ
+siteDescription: Administracja i zarządzanie nieruchomościami
 description: Jesteśmy profesjonalną firmą specjalizującą się w kompleksowym zarządzaniu wspólnotami mieszkaniowymi na terenie Łodzi
 keywords: zarządzanie nieruchomościami Łódź, administrowanie wspólnotami mieszkaniowymi, zarządca nieruchomości Łódź, obsługa techniczna budynków, usługi administracyjne nieruchomości
 splashTitle: 'Jesteśmy profesjonalną firmą specjalizującą się w kompleksowym zarządzaniu wspólnotami mieszkaniowymi na terenie Łodzi'

@@ -16,11 +16,11 @@ const MENU = [
 	},
 ];
 
-const { theme } = Astro.props;
+const { theme, title } = Astro.props;
 ---
 
 <nav>
-	<a href="#">
+	<a href="#" aria-label={title}>
 		<Logo type={theme} />
 	</a>
 	<ul>

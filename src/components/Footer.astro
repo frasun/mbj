@@ -16,17 +16,17 @@ const { siteName, seeAlso }: Props = Astro.props;
 const FOOTER = {
 	title:
 		"Zapraszamy do kontaktu w celu omówienia szczegółów i dostosowania oferty do Twoich potrzeb",
-	phone: "+48=502=123=123",
-	email: "aaa+++aaa.pl",
-	address: "ul. Stefana Jaracza 2, 91-123 Łódź",
+	phone: "+48=600=429=407",
+	email: "biuro+++mbj.com.pl",
+	address: "ul. Czarnieckiego 2, 91-844 Łódź",
 	socialMedia: [
 		{
-			title: "fb",
+			title: "Profil Facebook",
 			link: "",
 			icon: Icons.SocialFb,
 		},
 		{
-			title: "ig",
+			title: "Profil Instagram",
 			link: "",
 			icon: Icons.SocialIg,
 		},
@@ -37,7 +37,7 @@ const FOOTER = {
 
 <footer id="kontakt">
 	<address>
-		<h4>{FOOTER.title}</h4>
+		<h2>{FOOTER.title}</h2>
 		<contact-link data-number={FOOTER.phone}>
 			<a href="#">
 				<Icon icon={Icons.Phone} width={32} height={32} />
@@ -62,7 +62,7 @@ const FOOTER = {
 		}
 	</ul>
 	<aside>
-		<h5>Zobacz również</h5>
+		<h3>Zobacz również</h3>
 		<a href={`${import.meta.env.SITE}/${seeAlso.link}`} target="_blank">
 			<Logo type={seeAlso.logo} />
 			<strong>{seeAlso.title}</strong>
@@ -97,7 +97,8 @@ const FOOTER = {
 		font-size: var(--font-size--7);
 	}
 
-	address h4 {
+	address h2 {
+		font-size: var(--font-size--4);
 		margin-bottom: var(--spacing--1);
 	}
 
@@ -152,7 +153,7 @@ const FOOTER = {
 		line-height: var(--line-height--2);
 	}
 
-	aside h5 {
+	aside h3 {
 		margin-bottom: var(--spacing--1);
 		font-size: var(--font-size--5);
 	}
@@ -166,7 +167,7 @@ const FOOTER = {
 			grid-area: 1 / 1 / span 2 / 2;
 		}
 
-		address h4 {
+		address h2 {
 			max-width: 600px;
 		}
 

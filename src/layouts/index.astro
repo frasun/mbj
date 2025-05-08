@@ -16,7 +16,8 @@ const SITE_NAME = "MBJ";
 const {
 	frontmatter: {
 		theme,
-		title,
+		siteName,
+		siteDescription,
 		description,
 		keywords,
 		splashTitle,
@@ -29,6 +30,8 @@ const {
 		seeAlso,
 	},
 } = Astro.props;
+
+const title = `${siteName} - ${siteDescription}`;
 ---
 
 <Layout
@@ -37,7 +40,7 @@ const {
 	metaDescription={description}
 	metaKeywords={keywords}
 >
-	<Menu theme={theme} />
+	<Menu theme={theme} title={siteName} />
 	<Splash
 		title={splashTitle}
 		text={splashText}

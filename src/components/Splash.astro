@@ -19,7 +19,12 @@ const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 
 <section>
 	<figure data-splash>
-		<Image src={image} alt={imageAlt} />
+		<Image
+			src={image}
+			alt={imageAlt}
+			widths={[400, 500, 800, image.width]}
+			sizes={`(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1360px) 500px, ${image.width}px`}
+		/>
 	</figure>
 	<div>
 		<h1 data-fade>{title}</h1>
@@ -98,8 +103,8 @@ const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 	}
 
 	section > div > div p {
-		flex: 1 1 min(373px, 29vw + 1rem);
-		min-width: 200px;
+		flex: 1 1 min(300px, 29vw + 1rem);
+		min-width: 300px;
 	}
 
 	p {

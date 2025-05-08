@@ -18,7 +18,7 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 ---
 
 <section id="dlaczego-my">
-	<h3>{ADVANTAGES_HEADING}</h3>
+	<h2>{ADVANTAGES_HEADING}</h2>
 	<ul>
 		{
 			advantages.map(({ title, subtitle }) => (
@@ -51,6 +51,10 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 		z-index: 100;
 		/* Safari fix */
 		transform: translate3d(0, 0, 0);
+	}
+
+	h2 {
+		font-size: max(var(--font-size--4), 0.5625vw + 1rem);
 	}
 
 	ul {
