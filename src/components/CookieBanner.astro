@@ -1,0 +1,123 @@
+---
+
+---
+
+<cookie-banner></cookie-banner>
+
+<style>
+	cookie-banner:not(:empty) {
+		position: fixed;
+		bottom: 15px;
+		right: 15px;
+		z-index: 1000;
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+		align-items: start;
+		max-width: 260px;
+		width: 100%;
+		padding: 15px 20px;
+		background-color: var(--cookie-banner--background-color);
+		font-size: 0.75rem;
+	}
+
+	cookie-banner :global(button) {
+		appearance: none;
+		-webkit-appearance: none;
+		text-decoration: underline;
+		background: none;
+		border: none;
+		transition: opacity 0.35s ease-in-out;
+		cursor: pointer;
+	}
+
+	cookie-banner :global(button:hover) {
+		opacity: 0.75;
+	}
+
+	cookie-banner.animate {
+		animation-name: hideToast;
+		animation-duration: 0.25s;
+		animation-timing-function: ease-in-out;
+		animation-iteration-count: 1;
+	}
+
+	@keyframes hideToast {
+		0% {
+			opacity: 100;
+		}
+
+		100% {
+			opacity: 0;
+		}
+	}
+</style>
+
+<script>
+	export const BANNER_COOKIE = "use-cookies";
+
+	class CookieBanner extends HTMLElement {
+		button: NodeListOf<HTMLButtonElement>;
+
+		constructor() {
+			super();
+
+			const cookie = this.getCookie(BANNER_COOKIE);
+
+			if (!cookie || !Boolean(cookie)) {
+				this.innerHTML = `
+          <p>Strona zapisuje informacje dotyczące odwiedzających.</p>
+          <button id="accept">Rozumiem</button>
+        `;
+			}
+
+			this.button = this.querySelectorAll("button");
+			if (this.button.length) {
+				Array.from(this.button).forEach((button) => {
+					button.addEventListener("click", () => {
+						const answer = button.id === "accept" ? "true" : "false";
+
+						this.setCookie(BANNER_COOKIE, answer);
+
+						window.requestAnimationFrame(() => {
+							this.classList.add("animate");
+
+							this.addEventListener("animationend", () => {
+								this.remove();
+							});
+						});
+					});
+				});
+			}
+		}
+
+		setCookie(cName: string, cValue: string, expDays = 365) {
+			let date = new Date();
+			date.setTime(date.getTime() + expDays * 24 * 60 * 60 * 1000);
+			const expires = "expires=" + date.toUTCString();
+			document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+		}
+
+		getCookie(name: string) {
+			// Split cookie string and get all individual name=value pairs in an array
+			let cookieArr = document.cookie.split(";");
+
+			// Loop through the array elements
+			for (let i = 0; i < cookieArr.length; i++) {
+				let cookiePair = cookieArr[i].split("=");
+
+				/* Removing whitespace at the beginning of the cookie name
+        and compare it with the given string */
+				if (name == cookiePair[0].trim()) {
+					// Decode the cookie value and return
+					return decodeURIComponent(cookiePair[1]);
+				}
+			}
+
+			// Return null if not found
+			return null;
+		}
+	}
+
+	customElements.define("cookie-banner", CookieBanner);
+</script>

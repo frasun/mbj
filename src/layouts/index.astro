@@ -6,6 +6,7 @@ import Services from "../components/Services.astro";
 import WhyUs from "../components/WhyUs.astro";
 import Footer from "../components/Footer.astro";
 import GA from "../components/GA.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 
 export enum Theme {
 	Administracja = "administracja",
@@ -59,6 +60,9 @@ const gaCode = Theme.Administracja === theme ? "J7MHHZ0TZ2" : "XFWQGGG5RS";
 	<WhyUs advantages={advantages} pricing={pricing} />
 	<Footer siteName={SITE_NAME} seeAlso={seeAlso} />
 </Layout>
-{import.meta.env.PROD && <GA ga={gaCode} />}
+{import.meta.env.PROD && (
+	<GA ga={gaCode} />
+	<CookieBanner />
+)}
 
 <script src="../assets/scripts/animations.js"></script>
