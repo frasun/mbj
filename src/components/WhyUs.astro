@@ -42,7 +42,7 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 		padding: var(--spacing--3) var(--spacing--container);
 		scroll-margin-top: var(--header--height);
 		background-color: var(--why--background-color);
-		color: var(--why--color);
+		color: var(--why--text-color);
 		display: flex;
 		flex-direction: column;
 		gap: var(--spacing--3);
@@ -93,5 +93,10 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 
 	h6 {
 		margin-bottom: 0.2em;
+		color: var(--why--headings-color);
+	}
+
+	section :global(svg) {
+		color: var(--why--headings-color);
 	}
 </style>

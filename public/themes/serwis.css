@@ -29,7 +29,7 @@
 
 	/* Why Us */
 	--why--background-color: var(--color--1);
-	--why--color: var(--color--4);
+	--why--text-color: var(--color--4);
 	--why--border-color: var(--color--6);
 
 	/* Footer */

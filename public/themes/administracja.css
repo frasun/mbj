@@ -29,7 +29,8 @@
 
 	/* Why Us */
 	--why--background-color: var(--color--1);
-	--why--color: var(--color--3);
+	--why--text-color: var(--color--2);
+	--why--headings-color: var(--color--3);
 	--why--border-color: var(--color--6);
 
 	/* Footer */
