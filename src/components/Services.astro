@@ -5,13 +5,17 @@ import { Theme } from "../layouts/index.astro";
 import { Image } from "astro:assets";
 
 import img1 from "../assets/images/img-1.png";
-import img2 from "../assets/images/img-2.png";
-import img3 from "../assets/images/img-3.png";
-import img4 from "../assets/images/img-4.png";
+// import img2 from "../assets/images/img-2.png";
+// import img3 from "../assets/images/img-3.png";
+// import img4 from "../assets/images/img-4.png";
 import img5 from "../assets/images/img-5.png";
-import img6 from "../assets/images/img-6.png";
+// import img6 from "../assets/images/img-6.png";
 import img7 from "../assets/images/img-7.png";
 import img8 from "../assets/images/img-8.png";
+import img2 from "../assets/images/img-11.png";
+import img4 from "../assets/images/img-12.png";
+import img6 from "../assets/images/img-13.png";
+import img3 from "../assets/images/img-14.png";
 
 interface Props {
 	heading: string;
@@ -69,8 +73,8 @@ const { services, heading, info, theme = Theme.Administracja, imageAlt }: Props 
 		Theme.Administracja === theme
 		? (
 			<Image src={img8} alt={imageAlt} />
-			<Image src={img4} alt={imageAlt} />
 			<Image src={img6} alt={imageAlt} />
+			<Image src={img4} alt={imageAlt} />
 			<Image src={img2} alt={imageAlt} />
 		)
 		: (
