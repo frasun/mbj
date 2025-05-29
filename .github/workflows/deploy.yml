@@ -24,9 +24,11 @@ jobs:
       run: npm ci
       
     - name: Build Astro site
-      run: npm run build
+      run: |
+        npm run build
       env:
         NODE_ENV: production
+        CI: true
       
     - name: Deploy to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
