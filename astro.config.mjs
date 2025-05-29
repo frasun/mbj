@@ -7,4 +7,11 @@ export default defineConfig({
 		? "https://mbj.seekthekingdom.studio/w"
 		: "http://localhost:4321",
 	base: import.meta.env.PROD ? "/w/" : "",
+	build: {
+		format: "directory",
+		assets: "assets", // This ensures assets are properly handled
+	},
+	vite: {
+		assetsInclude: ["**/*.svg"], // Explicitly include SVGs as assets
+	},
 });
