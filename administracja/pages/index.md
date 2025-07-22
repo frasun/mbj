@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/index.astro
+layout: ../../src/layouts/index.astro
 theme: administracja
 siteName: MBJ
 siteDescription: Administracja i zarządzanie nieruchomościami
@@ -140,11 +140,6 @@ services: [
 		title: "Dodatkowe usługi",
 		icon: "star",
 		bullets: [
-			{
-				title: "Platforma online",
-				content:
-					"Dostęp do systemu dla mieszkańców (np. e-kartoteka) z wglądem w rozliczenia, dokumenty i zgłaszanie usterek",
-			},
 			{
 				title: "Optymalizacja kosztów",
 				content:

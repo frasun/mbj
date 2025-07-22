@@ -12,6 +12,10 @@ interface Props {
 }
 
 const { theme, pageTitle, metaKeywords, metaDescription } = Astro.props;
+
+const BASE_URL = import.meta.env.PROD
+	? import.meta.env.ASSETS_PREFIX || import.meta.env.SITE
+	: import.meta.env.SITE;
 ---
 
 <!doctype html>
@@ -25,45 +29,33 @@ const { theme, pageTitle, metaKeywords, metaDescription } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:type" content="website" />
-		<meta
-			property="og:image"
-			content=`${import.meta.env.BASE_URL}/mbj-${theme}-og-image.png`
-		/>
-		<meta property="og:url" content="https://mbj.com.pl" />
+		<meta property="og:image" content=`${BASE_URL}/mbj-${theme}-og-image.png` />
+		<meta property="og:url" content=`${import.meta.env.SITE}` />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta property="og:description" content={metaDescription} />
 		<meta property="og:site_name" content={pageTitle} />
 		<meta name="twitter:image:alt" content={pageTitle} />
 		<title>{pageTitle}</title>
-		<link
-			rel="stylesheet"
-			href=`${import.meta.env.BASE_URL}themes/${theme}.css`
-		/>
+		<link rel="stylesheet" href=`${BASE_URL}/themes/${theme}.css` />
 		<link
 			rel="icon"
 			type="image/png"
-			href=`${import.meta.env.BASE_URL}favicon/${theme}/favicon-96x96.png`
+			href=`${BASE_URL}/favicon/${theme}/favicon-96x96.png`
 			sizes="96x96"
 		/>
 		<link
 			rel="icon"
 			type="image/svg+xml"
-			href=`${import.meta.env.BASE_URL}favicon/${theme}/favicon.svg`
+			href=`${BASE_URL}/favicon/${theme}/favicon.svg`
 		/>
-		<link
-			rel="shortcut icon"
-			href=`${import.meta.env.BASE_URL}favicon/${theme}/favicon.ico`
-		/>
+		<link rel="shortcut icon" href=`${BASE_URL}/favicon/${theme}/favicon.ico` />
 		<link
 			rel="apple-touch-icon"
 			sizes="180x180"
-			href=`${import.meta.env.BASE_URL}favicon/${theme}/apple-touch-icon.png`
+			href=`${BASE_URL}/favicon/${theme}/apple-touch-icon.png`
 		/>
 		<meta name="apple-mobile-web-app-title" content="MBJ Serwis" />
-		<link
-			rel="manifest"
-			href=`${import.meta.env.BASE_URL}favicon/${theme}/site.webmanifest`
-		/>
+		<link rel="manifest" href=`${BASE_URL}/favicon/${theme}/site.webmanifest` />
 	</head>
 	<body>
 		<slot />

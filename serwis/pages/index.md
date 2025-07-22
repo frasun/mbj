@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/index.astro
+layout: ../../src/layouts/index.astro
 theme: serwis
 siteName: MBJ Serwis
 siteDescription: Profesjonalne usługi utrzymania czystości
@@ -87,7 +87,7 @@ services: [
 		],
 	},
 ]
-servicesInfo: 'Zapewniamy środki czystości, piasek na zimę i żarówki'
+servicesInfo: 'Zapewniamy środki czystości i piasek na zimę'
 advantages: [
 	{
 		title: "Doświadczenie",
