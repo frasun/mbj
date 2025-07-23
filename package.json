@@ -1,7 +1,7 @@
 {
-	"name": "",
+	"name": "mbj-website",
 	"type": "module",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "astro dev",
 		"dev:serwis": "astro dev --config astro.config.serwis.mjs",

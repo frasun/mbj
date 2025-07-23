@@ -1,7 +1,7 @@
 ---
 import Logo from "./Logo.astro";
 import Icon, { IconName as Icons } from "./Icon.astro";
-import type { Theme } from "../layouts/index.astro";
+import { Theme } from "../layouts/index.astro";
 
 interface Props {
 	siteName: string;
@@ -33,6 +33,14 @@ const FOOTER = {
 	],
 	copyText: "Wszelkie prwa zastrzeżone",
 };
+
+const crossBrandLink = import.meta.env.PROD
+	? Theme.Administracja === seeAlso.link
+		? import.meta.env.PROD_URL_ADMINISTRACJA
+		: import.meta.env.PROD_URL_SERWIS
+	: Theme.Administracja === seeAlso.link
+		? import.meta.env.DEV_URL
+		: import.meta.env.DEV_URL_SERWIS;
 ---
 
 <footer id="kontakt">
@@ -50,7 +58,7 @@ const FOOTER = {
 		</contact-link>
 		<p>{FOOTER.address}</p>
 	</address>
-	<ul>
+	<!-- <ul>
 		{
 			FOOTER.socialMedia.map(({ title, link, icon }) => (
 				<li>
@@ -60,10 +68,10 @@ const FOOTER = {
 				</li>
 			))
 		}
-	</ul>
+	</ul> -->
 	<aside>
 		<h3>Zobacz również</h3>
-		<a href={`${import.meta.env.SITE}/${seeAlso.link}`} target="_blank">
+		<a href={`${crossBrandLink}`} target="_blank">
 			<Logo type={seeAlso.logo} />
 			<strong>{seeAlso.title}</strong>
 		</a>
