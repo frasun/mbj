@@ -10,14 +10,14 @@ interface Props {
 		logo: Theme;
 		link: string;
 	};
+	email: string;
 }
 
-const { siteName, seeAlso }: Props = Astro.props;
+const { siteName, seeAlso, email }: Props = Astro.props;
 const FOOTER = {
 	title:
 		"Zapraszamy do kontaktu w celu omówienia szczegółów i dostosowania oferty do Twoich potrzeb",
 	phone: "+48=600=429=407",
-	email: "biuro+++mbj-nieruchomosci.pl",
 	address: "ul. Czarnieckiego 2, 91-844 Łódź",
 	socialMedia: [
 		{
@@ -51,7 +51,7 @@ const crossBrandLink = import.meta.env.PROD
 				<Icon icon={Icons.Phone} width={32} height={32} />
 			</a>
 		</contact-link>
-		<contact-link data-email={FOOTER.email}>
+		<contact-link data-email={email}>
 			<a href="#">
 				<Icon icon={Icons.Mention} width={32} height={32} />
 			</a>

@@ -110,4 +110,5 @@ seeAlso: {
   logo: "administracja",
   link: "administracja",
 }
+email: biuro+++mbj-serwis.pl
 ---
