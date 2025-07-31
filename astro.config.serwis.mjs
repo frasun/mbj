@@ -12,7 +12,7 @@ export default defineConfig({
 	output: "static",
 	srcDir: "./serwis",
 	outDir: "./dist/serwis",
-	publicDir: import.meta.env.PROD ? "./xxx" : "./public",
+	publicDir: import.meta.env.PROD ? "/xxx" : "./public",
 	server: { port: 8080 },
 	build: {
 		assetsPrefix: import.meta.env.PROD ? PROD_URL_ADMINISTRACJA : "",

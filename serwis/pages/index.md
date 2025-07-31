@@ -1,5 +1,5 @@
 ---
-layout: ../../src/layouts/index.astro
+layout: ../../src/themes/serwis.astro
 theme: serwis
 siteName: MBJ Serwis
 siteDescription: Profesjonalne usługi utrzymania czystości
@@ -110,5 +110,5 @@ seeAlso: {
   logo: "administracja",
   link: "administracja",
 }
-email: biuro+++mbj-serwis.pl
+email: kontakt+++mbj-serwis.pl
 ---

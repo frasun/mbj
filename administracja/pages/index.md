@@ -1,5 +1,5 @@
 ---
-layout: ../../src/layouts/index.astro
+layout: ../../src/themes/administracja.astro
 theme: administracja
 siteName: MBJ Nieruchomości
 siteDescription: Administracja i zarządzanie nieruchomościami
@@ -185,5 +185,5 @@ seeAlso: {
   logo: "serwis",
   link: "serwis",
 }
-email: biuro+++mbj-nieruchomosci.pl
+email: kontakt+++mbj-nieruchomosci.pl
 ---

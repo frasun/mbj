@@ -23,7 +23,9 @@ const image = Theme.Administracja === theme ? splashMBJ : splashMBJSerwis;
 			src={image}
 			alt={imageAlt}
 			widths={[400, 500, 800, image.width]}
-			sizes={`(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1360px) 500px, ${image.width}px`}
+			sizes={`(min-width: 1920px) ${image.width}px, (min-width: 1360px) 500px, (min-width: 400px) 800px, 400px`}
+			loading={"eager"}
+			fetchpriority={"high"}
 		/>
 	</figure>
 	<div>

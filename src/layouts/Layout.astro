@@ -2,6 +2,8 @@
 import type { Theme } from "./index.astro";
 import "@fontsource-variable/schibsted-grotesk";
 import "@fontsource-variable/readex-pro";
+import fontBodyExt from "@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-ext-wght-normal.woff2?url";
+import fontHeadingsExt from "@fontsource-variable/readex-pro/files/readex-pro-latin-ext-wght-normal.woff2?url";
 import "../assets/styles/style.css";
 
 interface Props {
@@ -36,7 +38,6 @@ const BASE_URL = import.meta.env.PROD
 		<meta property="og:site_name" content={pageTitle} />
 		<meta name="twitter:image:alt" content={pageTitle} />
 		<title>{pageTitle}</title>
-		<link rel="stylesheet" href=`${BASE_URL}/themes/${theme}.css` />
 		<link
 			rel="icon"
 			type="image/png"
@@ -56,6 +57,20 @@ const BASE_URL = import.meta.env.PROD
 		/>
 		<meta name="apple-mobile-web-app-title" content="MBJ Serwis" />
 		<link rel="manifest" href=`${BASE_URL}/favicon/${theme}/site.webmanifest` />
+		<!-- <link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href={fontBodyExt}
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href={fontHeadingsExt}
+			crossorigin="anonymous"
+		/> -->
 	</head>
 	<body>
 		<slot />

@@ -1,0 +1,54 @@
+---
+import Index from "../layouts/index.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Index frontmatter={frontmatter} />
+
+<style>
+	:root {
+		--color--1: #342b2d;
+		--color--2: #bab8b1;
+		--color--3: #fdfcf2;
+		--color--4: #35332c;
+		--color--5: rgba(53, 51, 44, 0.6);
+		--color--6: rgba(186, 184, 177, 0.3);
+
+		/* Body */
+		--body--color: var(--color--4);
+		--body--background-color: var(--color--1);
+
+		/* Menu */
+		--menu--logo--color: var(--color--3);
+		--menu--logo--height: max(48px, 1.25vw + 2rem);
+		--menu--links--color: var(--color--2);
+		--menu--border-color: var(--color--6);
+		--menu--padding: var(--spacing--1);
+
+		/* Splash */
+		--splash--color: var(--color--3);
+		--splash--text--color: var(--color--2);
+		--splash--background-color: var(--color--1);
+
+		/* Services */
+		--services--background-color: var(--color--3);
+		--services--border-color: var(--color--6);
+		--services--text-color: var(--color--5);
+
+		/* Why Us */
+		--why--background-color: var(--color--1);
+		--why--text-color: var(--color--2);
+		--why--headings-color: var(--color--3);
+		--why--border-color: var(--color--6);
+
+		/* Footer */
+		--footer--background-color: var(--color--2);
+		--footer--sm-color: var(--color--5);
+		--footer--sm-color--hover: var(--color--4);
+		--footer--copy-color: var(--color--4);
+
+		/* Cookie banner */
+		--cookie-banner--background-color: var(--color--3);
+	}
+</style>

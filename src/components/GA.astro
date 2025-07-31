@@ -7,8 +7,10 @@ const { ga }: Props = Astro.props;
 ---
 
 <!-- Google tag (gtag.js) -->
-<script async src={`https://www.googletagmanager.com/gtag/js?id=G-${ga}`}
-></script>
+<script
+	is:inline
+	async
+	src={`https://www.googletagmanager.com/gtag/js?id=G-${ga}`}></script>
 
 <script is:inline define:vars={{ ga }}>
 	window.dataLayer = window.dataLayer || [];
