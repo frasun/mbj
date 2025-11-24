@@ -153,6 +153,13 @@ services: [
 		],
 	},
 ]
+servicesInfo: [
+	{
+		content: "Koszt zarządzania i administrowania zależy od wielkości wspólnoty (liczby lokali, powierzchni nieruchomości) oraz zakresu wybranych usług. Wycena ostateczna, w tym koszty przejęcia budynku od dewelopera, zostanie przedstawiona po zapoznaniu się z dokumentacją wspólnoty i jej specyfiką.",
+		icon: "info",
+		width: "full"
+	},
+]
 advantages: [
 	{
 		title: "Doświadczenie",
@@ -175,15 +182,11 @@ advantages: [
 			"Dostosowujemy ofertę do specyfiki każdej wspólnoty, uwzględniając jej potrzeby i oczekiwania",
 	},
 ]
-pricing: {
-	title: "Koszty usług",
-	content:
-		"Koszt zarządzania i administrowania zależy od wielkości wspólnoty (liczby lokali, powierzchni nieruchomości) oraz zakresu wybranych usług. Wycena ostateczna, w tym koszty przejęcia budynku od dewelopera, zostanie przedstawiona po zapoznaniu się z dokumentacją wspólnoty i jej specyfiką.",
-}
 seeAlso: {
   title: "Profesjonalne usługi porządkowe",
   logo: "serwis",
   link: "serwis",
 }
 email: kontakt+++mbj-nieruchomosci.pl
+phone: +48=600=429=407
 ---

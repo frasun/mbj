@@ -28,9 +28,9 @@ const {
 		servicesHeading,
 		servicesInfo,
 		advantages,
-		pricing,
 		seeAlso,
-		email
+		email,
+		phone
 	},
 } = Astro.props;
 
@@ -58,8 +58,8 @@ const gaCode = Theme.Administracja === theme ? "J7MHHZ0TZ2" : "XFWQGGG5RS";
 		theme={theme}
 		imageAlt={title}
 	/>
-	<WhyUs advantages={advantages} pricing={pricing} />
-	<Footer siteName={SITE_NAME} seeAlso={seeAlso} email={email} />
+	<WhyUs advantages={advantages} />
+	<Footer siteName={SITE_NAME} seeAlso={seeAlso} email={email} phone={phone} />
 </Layout>
 {import.meta.env.PROD && (
 	<GA ga={gaCode} />
@@ -67,3 +67,34 @@ const gaCode = Theme.Administracja === theme ? "J7MHHZ0TZ2" : "XFWQGGG5RS";
 )}
 
 <script src="../assets/scripts/animations.js"></script>
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+
+  function fixWiszaceSpojnikiInText(text: string) {
+    // one-letter Polish conjunctions/prepositions: a, i, o, u, w, z
+    const regex = /\b([aiouwzAIUOWZ])\s+/g;
+    return text.replace(regex, "$1\u00A0");
+  }
+
+  function processTextNodes(root = document.body) {
+    const walker = document.createTreeWalker(
+      root,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          // ignore whitespace-only text nodes
+          if (!node.textContent || !node.textContent.trim()) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      }
+    );
+
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      node.textContent = fixWiszaceSpojnikiInText(node.textContent as string);
+    }
+  }
+
+  processTextNodes(); // run on full page
+});
+</script>

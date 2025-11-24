@@ -10,11 +10,14 @@ import IconLeaf from "../assets/images/icon-leaf.svg";
 import IconMention from "../assets/images/icon-mention.svg";
 import IconPhone from "../assets/images/icon-phone.svg";
 import IconRefresh from "../assets/images/icon-refresh.svg";
-import IconScan from "../assets/images/icon-scan.svg";
+import IconInterior from "../assets/images/icon-interior.svg";
 import IconStar from "../assets/images/icon-star.svg";
 import IconArrowDown from "../assets/images/icon-arrow-down.svg";
 import IconSocialFb from "../assets/images/icon-fb.svg";
 import IconSocialIg from "../assets/images/icon-ig.svg";
+import IconMap from "../assets/images/icon-map.svg";
+import IconExterior from "../assets/images/icon-exterior.svg";
+import IconPaint from "../assets/images/icon-paint.svg";
 
 export enum IconName {
 	Buildings = "buildings",
@@ -28,11 +31,14 @@ export enum IconName {
 	Mention = "mention",
 	Phone = "phone",
 	Refresh = "refresh",
-	Scan = "scan",
+	IconInterior = "interior",
 	Star = "star",
 	ArrowDown = "arrowDown",
 	SocialFb = "socialFb",
 	SocialIg = "socialIg",
+	Map = "map",
+	Exterior = "exterior",
+	Paint = "paint",
 }
 
 interface Props {
@@ -55,11 +61,14 @@ const iconMap = {
 	mention: IconMention,
 	phone: IconPhone,
 	refresh: IconRefresh,
-	scan: IconScan,
+	interior: IconInterior,
 	star: IconStar,
 	arrowDown: IconArrowDown,
 	socialFb: IconSocialFb,
 	socialIg: IconSocialIg,
+	map: IconMap,
+	exterior: IconExterior,
+	paint: IconPaint,
 };
 
 const SVGIcon = iconMap[icon];

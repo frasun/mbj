@@ -6,13 +6,9 @@ interface Props {
 		title: string;
 		subtitle: string;
 	}[];
-	pricing: {
-		title: string;
-		content: string;
-	};
 }
 
-const { advantages, pricing }: Props = Astro.props;
+const { advantages }: Props = Astro.props;
 
 const ADVANTAGES_HEADING = "Dlaczego my?";
 ---
@@ -30,11 +26,6 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 			))
 		}
 	</ul>
-	<div data-fade>
-		<Icon icon={IconName.Info} width={32} height={32} />
-		<h6>{pricing.title}</h6>
-		<p>{pricing.content}</p>
-	</div>
 </section>
 
 <style>
@@ -61,6 +52,7 @@ const ADVANTAGES_HEADING = "Dlaczego my?";
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: var(--spacing--3);
+		padding-bottom: var(--spacing--2);
 	}
 
 	@media (max-width: 800px) {
